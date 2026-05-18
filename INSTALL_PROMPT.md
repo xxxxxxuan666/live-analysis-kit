@@ -16,13 +16,13 @@
 ### 第 1 步 — 下载工具包
 
 ```bash
-git clone https://github.com/{{GITHUB_USER}}/live-analysis-kit.git "C:\live-analysis-kit"
+git clone https://github.com/xxxxxxuan666/live-analysis-kit.git "C:\live-analysis-kit"
 ```
 
 如未安装 git，改用以下方式下载压缩包并解压到 `C:\live-analysis-kit`：
 
 ```
-https://github.com/{{GITHUB_USER}}/live-analysis-kit/archive/refs/heads/main.zip
+https://github.com/xxxxxxuan666/live-analysis-kit/archive/refs/heads/main.zip
 ```
 
 ### 第 2 步 — 运行一键安装脚本
