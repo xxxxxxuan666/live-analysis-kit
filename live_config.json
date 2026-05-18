@@ -1,0 +1,19 @@
+{
+  "_说明": "直播竞品分析工具配置文件，填写后保存即可使用",
+
+  "feishu_app_id": "",
+  "feishu_app_secret": "",
+  "feishu_folder_token": "",
+  "feishu_wiki_token": "",
+  "feishu_domain": "feishu.cn",
+  "feishu_owner_email": "",
+
+  "_feishu_说明": {
+    "app_id_获取": "飞书开放平台 https://open.feishu.cn → 我的应用 → 创建企业自建应用 → 凭证与基础信息",
+    "app_secret_获取": "同上页面，App Secret 点击查看",
+    "wiki_token_说明": "飞书 Wiki 文档 URL 最后一段，如 https://xxx.feishu.cn/wiki/AbCdEfGh 中的 AbCdEfGh",
+    "feishu_domain_说明": "你的飞书域名，个人版填 feishu.cn，企业版填 yourcompany.feishu.cn",
+    "folder_token_获取": "可选，留空。如需新建文档时指定目录才填",
+    "权限配置": "飞书开放平台 → 应用权限 → 搜索并开通: wiki:wiki、docx:document"
+  }
+}
