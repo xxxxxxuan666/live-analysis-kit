@@ -47,11 +47,11 @@ def print_err(text):
 
 def install_deps():
     print_step(1, "检查并安装 Python 依赖")
-    packages = ["PyAudioWPatch", "openai-whisper", "requests", "Pillow"]
+    packages = ["PyAudioWPatch", "faster-whisper", "requests", "Pillow"]
     missing = []
     import_names = {
         "PyAudioWPatch": "pyaudiowpatch",
-        "openai-whisper": "whisper",
+        "faster-whisper": "faster_whisper",
         "requests": "requests",
         "Pillow": "PIL",
     }

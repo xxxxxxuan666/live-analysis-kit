@@ -73,10 +73,10 @@ def main():
         sys.exit(1)
 
     try:
-        import whisper
+        from faster_whisper import WhisperModel
     except ImportError:
         print("缺少依赖，请先运行：", flush=True)
-        print('  pip install openai-whisper', flush=True)
+        print('  pip install faster-whisper', flush=True)
         sys.exit(1)
 
     p = pyaudio.PyAudio()
@@ -96,9 +96,10 @@ def main():
         p.terminate()
         sys.exit(1)
 
-    # --- 加载 Whisper ---
-    print("加载 Whisper small 模型（首次运行会自动下载 ~460MB）...", flush=True)
-    model = whisper.load_model("small")
+    # --- 加载 faster-whisper ---
+    from faster_whisper import WhisperModel
+    print("加载 faster-whisper small 模型（首次运行会自动下载 ~460MB）...", flush=True)
+    model = WhisperModel("small", device="cpu", compute_type="int8")
 
     # --- 输出文件 ---
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -157,17 +158,15 @@ def main():
                     continue
 
                 # 转录
-                result = model.transcribe(
+                segments, _ = model.transcribe(
                     audio_16k,
                     language="zh",
-                    fp16=False,
-                    verbose=False,
                     initial_prompt=INITIAL_PROMPT,
                     beam_size=5,
-                    best_of=5,
                     temperature=0.0,
+                    vad_filter=True,
                 )
-                text = result["text"].strip()
+                text = "".join(seg.text for seg in segments).strip()
 
                 if text:
                     total_chars += len(text)
