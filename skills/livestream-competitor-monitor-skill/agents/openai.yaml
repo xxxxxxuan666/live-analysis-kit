@@ -1,0 +1,7 @@
+interface:
+  display_name: "竞品直播监播助手"
+  short_description: "分析抖音直播话术、评论和录屏画面"
+  default_prompt: "Use $livestream-competitor-monitor to monitor a Douyin competitor livestream from real-time transcript text or screen recording and produce a structured analysis report."
+
+policy:
+  allow_implicit_invocation: true
